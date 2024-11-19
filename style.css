@@ -1,50 +1,105 @@
-td {
-	border:  2px solid #333;
-	height:  100px;
-	width:  100px;
-	text-align:  center;
-	vertical-align:  middle;
-	font-family:  "Comic Sans MS", cursive, sans-serif;
-	font-size:  70px;
-	cursor: pointer;
+/* General styling */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
-table {
-	border-collapse: collapse;
-	position: absolute;
-	left: 50%;
-	margin-left: -155px;
-	top: 50px;
+/* Game container */
+.game-container {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-table tr:first-child td {
-	border-top: 0;
+/* Title styling */
+.game-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #444;
 }
 
-table tr:last-child td {
-	border-bottom: 0;
+/* Table styling */
+.game-board {
+  border-collapse: collapse;
+  margin: 0 auto 20px;
 }
 
-table tr td:first-child {
-	border-left: 0;
+.cell {
+  border: 2px solid #444;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-table tr td:last-child {
-	border-right: 0;
+.cell:hover {
+  background-color: #ddd;
 }
 
+/* Winning combination colors */
+.cell.win {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cell.lose {
+  background-color: #f44336;
+  color: white;
+}
+
+.cell.tie {
+  background-color: #ffeb3b;
+  color: black;
+}
+
+/* Endgame popup */
 .endgame {
   display: none;
-  width: 200px;
-  top: 120px;
-  background-color: rgba(205,133,63, 0.8);
   position: absolute;
+  top: 50%;
   left: 50%;
-  margin-left: -100px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  text-align: center;
-  border-radius: 5px;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 250px;
+  background: rgba(72, 61, 139, 0.9);
   color: white;
-  font-size: 2em;
+  text-align: center;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.endgame .text {
+  margin: 0;
+}
+
+/* Replay button styling */
+.btn-replay {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-replay:hover {
+  background: #45a049;
 }
